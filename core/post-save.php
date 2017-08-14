@@ -3,7 +3,7 @@
 // Add reading_time taxonomy
 function rtf_create_readme() {
   register_taxonomy('reading_time', 'post', array(
-      'label' => __('reading_time', 'textdomain'),
+      'label' => __('Reading Time', 'rtf'),
       'rewrite' => array('slug' => 'reading_time'),
       'hierarchical' => true,
   ));

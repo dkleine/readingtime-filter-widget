@@ -30,21 +30,23 @@ class rtf_widget extends WP_Widget {
     ?>
     <form name="search" action="<?php bloginfo('url'); ?>" method="get">
       <select name="category_name">
+        <option value="">All Categories</option>
         <?php
         $categories = get_categories();
         foreach ($categories as $category) {
-          echo '<option value="', $category->slug, '">', $category->name, "</option>\n";
+          echo '<option value="'. $category->slug .'">'. $category->name ."</option>\n";
         }
         ?>
       </select>
       <select name="reading_time">
+        <option value="">All Times</option>
         <?php
         $terms = get_terms(array(
             'taxonomy' => $field,
             'hide_empty' => false,
         ));
         foreach ($terms as $term) {
-          echo '<option value="', $term->slug, '">', $term->name, "</option>\n";
+          echo '<option value="'. $term->slug .'">'. $term->name ."</option>\n";
         }
         ?>
       </select>
